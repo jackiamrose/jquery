@@ -31,7 +31,7 @@ html,body{margin:0;padding:0;font-size:12px;}
 .circle div:hover{background-color: white;}
 
 /*购物车*/
-.shop{position:relative;width:200px;height:50px;padding:10px 0;font-size:30px;background-color: #3291ff;border-radius:5px;cursor: pointer}
+.shop{position:relative;width:200px;height:50px;padding:10px 0;font-size:30px;background-color: #479cdc;border-radius:5px;cursor: pointer}
 .shop span:first-child{position:absolute;width:30px;height:23px;top:24.5px;left:35px;background:url(../images/gouwu.jpg) no-repeat -204px -131px}
 .shop span:last-child{position:absolute;left:72px;top:18px;color:white;}
 
