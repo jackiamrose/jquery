@@ -142,9 +142,13 @@ var dataBase = {
             }
         }
         /*选择产品*/
-        $('.list').click(function(){
-            $(this).parent().find(".list").css({"background-color":"transparent","color":"black"});
-            $(this).css({"background-color":"#666","color":"white"});
+        $('.list').each(function(){
+            $(this).bind({
+             'click': function () {
+                $(this).parent().find(".list").css({"background-color": "#fff", "color": "#000"});
+                $(this).css({"background-color": "#666", "color": "white"});
+            }
+            })
         });
 
 

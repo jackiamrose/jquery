@@ -26,8 +26,8 @@ var proShop={
                     /*加入购物箱*/
                     var clone=$(this).parent().clone();
                     clone.find(".shop-in").remove();
-                    clone.css({'border':'1px solid #ccc','margin-right':'3px','margin-bottom':'3px','cursor':'pointer'});
-                    clone.appendTo($('.shopcar'));
+                    clone.css({'border':'1px solid #ccc','margin-right':'3px','margin-bottom':'3px'});
+                    clone.appendTo($('.shopcontent'));
                 });
 
                 /*加入购物车动画*/
@@ -56,7 +56,7 @@ var proShop={
 
     /*遮罩处理*/
     createShopcar:function(){
-        var shopcar=$('<div class="shop-on"></div><div class="shopcar"><img class="img" src="assets/images/shanchu.png" alt=""></div>');
+        var shopcar=$('<div class="shop-on"></div><div class="shopcar"><div class="fixed"><img class="image" src="assets/images/shanchu.png" alt=""></div><div class="shopcontent"></div></div>');
         shopcar.appendTo($('body'));
         $('.shop-on').width(screen.width);
         $('.shop-on').height(screen.width);
@@ -67,7 +67,7 @@ var proShop={
             $('.shopcar').addClass('show');
 
             /*每个物品绑定删除键*/
-            $('.shopcar').find('div').each(function(){
+            $('.shopcontent').find('div').each(function(){
                 $(this).bind({
                     'mouseenter':function(){
                         $(this).append($('<p class="shanchu">删除</p>'));
@@ -83,54 +83,16 @@ var proShop={
             });
 
             /*返回键*/
-            $('.shopcar').find('img').click(function(){
+            $('.shopcar').find('.image').click(function(){
                 $('.shopcar').removeClass('show');
                 $('.shop-on').removeClass('show');
+                $('.shopcar').css({'top':'100px','left':'300px'});
                 $('body').css({'overflow-y':'auto'});
             });
-
-            /*点击购物栏外面返回*/
-            $('.shop-on').bind({
-             'mousedown':function(e){
-                 $('.shop-on').removeClass('show');
-                 $('.shopcar').removeClass('show');
-                 $('body').css({'overflow-y':'auto'});
-                 e.stopPropagation();
-              }
-             });
-
-
 
             /*兼容ie和firefox*/
             $(document).scrollTop(0);
             $('body').css({'overflow-y':'hidden'});
-
-            /*var tyle=false;
-            var pageX,pageY;
-            $('.shopcar').bind({
-                'mousedown':function(e){
-                    var e=e || window.event;
-                    pageX= e.pageX-$(this).offset().top;
-                    pageY= e.pageY-$(this).offset().left;
-                    tyle=true;
-                },
-                'mousemove':function(e){
-                    var e=e || window.event;
-                    if(tyle){
-                        $(this).css({
-                            'top':e.pageX-pageX ,
-                            'left':e.pageY-pageY
-                        })
-                    }
-                },
-                'mouseup':function(){
-                    tyle=false;
-                },
-                'mouseleave':function(){
-                    tyle=false;
-                }
-            });
-*/
         });
 
     },
