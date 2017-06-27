@@ -13,6 +13,9 @@ $(function(){
                 flag=true;
             },
             'mousemove':function(e){
+                $(document).mouseleave(function(){
+                    flag=false;
+                });
                 if(flag){
                     p.css({
                         left:e.pageX-pageX,

@@ -1,0 +1,25 @@
+CACHE　MANIFEST
+#v1.2
+
+CACHE：
+assets/image/1.jpg
+assets/image/2.jpg
+assets/image/3.jpg
+assets/image/4.jpg
+assets/image/gouwu.jpg
+assets/image/iphone6.jpg
+assets/image/shanchu.jpg
+assets/css/css.css
+assets/plugins/jquery-1.11.3.min.js
+assets/js/jquery.createpage.js
+assets/js/lunbo.js
+assets/js/move.js
+assets/js/shoopcar.js
+
+
+
+NETWORK：
+*
+
+FALLBACK：
+./error.html
